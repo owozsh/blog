@@ -1,0 +1,37 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Page from '../../components/Page.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import HeaderLink from '../../components/HeaderLink.astro';
+
+const posts = (await getCollection('posts')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+    <Page>
+			<section class="w-[1024px]">
+				<ul class="rounded-sm border border-solid border-stone-200 flex flex-col overflow-hidden">
+					{
+						posts.map((post) => (
+							<li class="even:bg-stone-50 border-b border-solid border-stone-200 last:border-b-0">
+								<a class="flex p-4 hover:text-red-800 hover:underline hover:bg-stone-100 transition-colors" href={`/posts/${post.slug}/`}>
+									<h4 class="font-bold">{post.data.title}</h4>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+    </Page>
+	</body>
+</html>
