@@ -9,7 +9,7 @@
 }
 
 body {
-  @apply bg-base-50 dark:bg-base-950;
+  @apply bg-base-50 dark:bg-base-950 max-w-[840px] mx-auto pb-8;
 }
 
 * {
@@ -21,7 +21,7 @@ article hr {
 }
 
 article h1 {
-  @apply font-bold text-3xl mt-2 mb-4;
+  @apply font-bold text-3xl mt-2 mb-4 text-accent;
 }
 
 article h2 {
@@ -29,7 +29,7 @@ article h2 {
 }
 
 article h3 {
-  @apply font-bold text-xl mb-2;
+  @apply font-bold text-xl my-4 text-accent;
 }
 
 article ul li {
@@ -48,6 +48,32 @@ article hr {
   @apply border-base-200 dark:border-base-800;
 }
 
+article p {
+  @apply mb-2;
+}
+
+article {
+  @apply text-lg;
+}
+
 *::selection {
   @apply bg-accent-100 dark:bg-accent-dark-950;
+}
+
+.aboutme {
+  @apply font-mono flex flex-col items-start bg-base-100 dark:bg-base-900 border border-solid border-base-200 dark:border-base-600 p-3 mb-4;
+}
+
+.aboutme p,
+.aboutme ul,
+.aboutme ol {
+  @apply mb-2;
+}
+
+.aboutme ul li {
+  @apply list-disc list-inside;
+}
+
+.aboutme ol li {
+  @apply list-decimal list-inside;
 }

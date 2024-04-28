@@ -1,9 +1,23 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import FileList from '../components/FileList.astro';
+import Section from '../components/Section.astro';
 import Page from '../components/Page.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { collections } from '../content/config';
+import About from '../components/About.astro';
+import { getCollection } from 'astro:content';
+
+const recentItems = []
+
+for (const c of Object.keys(collections)) {
+        recentItems.push(await getCollection(c as keyof typeof collections))
+}
+
+const sortedItems = recentItems.flat().sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
 ---
 
 <!doctype html>
@@ -13,12 +27,18 @@ import { collections } from '../content/config';
 	</head>
 	<body>
         <Page>
-                <p class="bg-base-100 dark:bg-base-900 border border-solid border-base-200 dark:border-base-600 p-3">
-                        This is a about me thing
-                </p>
-            <FileList items={Object.keys(collections).map((c) => ({
-                href: c,
-                title: c,
+                <Section>About me</Section>
+                <About/>
+                <Section>Explore</Section>
+                <FileList items={Object.keys(collections).map((c) => ({
+                        href: c,
+                        title: c,
+                }))} />
+                <Section>Recent Posts</Section>
+            <FileList items={sortedItems.map((c) => ({
+                href: `${c.collection}/${c.slug}`,
+                title: `${c.data.title}`,
+                createdAt: c.data.pubDate
                 }))} />
         </Page>
 	</body>

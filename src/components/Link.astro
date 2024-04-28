@@ -1,0 +1,8 @@
+---
+interface Props {
+  to: string,
+  replace?: boolean
+}
+const { to, replace } = Astro.props
+---
+<a class="text-accent hover:underline" href={to} target={replace ? "_self" : "_blank"}><slot /></a>

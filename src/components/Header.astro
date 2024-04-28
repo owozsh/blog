@@ -1,27 +1,9 @@
 ---
 import { SITE_TITLE } from '../consts';
-
-const { pathname } = Astro.url;
-
-const pathItems: Record<string, string> = pathname.split('/').filter((item) => item.length > 0).reduce((acc, curr) => ({
-        ...acc,
-        [curr]: [...Object.keys(acc), curr].join('/').substring(1)
-    }), {".": "/"})
-
-const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1
+import Path from './Path.astro';
 ---
 
-<header class="flex flex-col max-w-[1024px] mx-auto py-4 md:py-12 px-4 gap-2">
-    <h2 class="text-base m-0 font-bold text-accent">{SITE_TITLE}</h2>
-	<nav>
-        <ul class="flex">
-            {Object.keys(pathItems).map((key, i) => (
-            <li class="flex">
-                <a href={pathItems[key]} class:list={["px-2 hover:underline", isLastPathItem(i) ? 'font-bold text-accent' : '']}>
-                    {key}{isLastPathItem(i) ? '' : '/'}
-                </a>
-            </li>
-            ))}
-        </ul>
-	</nav>
+<header class="font-mono flex flex-col mx-auto py-4 md:py-12 px-4 gap-2">
+    <h2 class="text-base m-0 font-bold text-accent"><a href="/">{SITE_TITLE}</a></h2>
+    <Path/>
 </header>
