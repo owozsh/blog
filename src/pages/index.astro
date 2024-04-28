@@ -31,12 +31,12 @@ const sortedItems = recentItems.flat().sort(
                 <About/>
                 <Section>Explore</Section>
                 <FileList items={Object.keys(collections).map((c) => ({
-                        href: c,
+                        href: `/${c}`,
                         title: c,
                 }))} />
                 <Section>Recent Posts</Section>
             <FileList items={sortedItems.map((c) => ({
-                href: `${c.collection}/${c.slug}`,
+                href: `/${c.collection}/${c.slug}`,
                 title: `${c.data.title}`,
                 createdAt: c.data.pubDate
                 }))} />

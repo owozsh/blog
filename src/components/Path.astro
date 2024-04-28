@@ -14,7 +14,7 @@ const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1
   <ul class="flex">
       {Object.keys(pathItems).map((key, i) => (
       <li class="flex">
-          <a href={pathItems[key]} class:list={["pr-2 hover:underline", isLastPathItem(i) ? 'font-bold text-accent' : '']}>
+          <a href={`${pathItems[key]}`} class:list={["pr-2 hover:underline", isLastPathItem(i) ? 'font-bold text-accent' : '']}>
               {key}{isLastPathItem(i) ? '' : '/'}
           </a>
       </li>

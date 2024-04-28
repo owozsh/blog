@@ -17,7 +17,7 @@ const { items } = Astro.props;
     {
         items.map(({href, title, createdAt}) => (
             <li class="even:bg-base-100 dark:even:bg-base-900 border-b border-solid border-b-base-200 dark:border-base-800 last:border-b-0">
-                <a class="flex items-center justify-between hover:underline flex p-3 hover:text-accent hover:bg-base-100 dark:hover:bg-base-900 transition-colors" href={href}>
+                <a class="flex items-center justify-between hover:underline p-3 hover:text-accent hover:bg-base-100 dark:hover:bg-base-900 transition-colors" href={href}>
                     <h4 class="text-current">{title}</h4>
                     {createdAt ? (
                         <FormattedDate date={createdAt} />
