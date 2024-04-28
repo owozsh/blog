@@ -1,0 +1,24 @@
+---
+interface Props {
+    items: Array<{
+        href: string;
+        title: string;
+        createdAt?: Date;
+        previewUrl?: string;
+        }>;
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="rounded-md border border-solid border-gray-200 flex flex-col overflow-hidden">
+    {
+        items.map(({href, title}) => (
+            <li class="even:bg-gray-100 border-b border-solid border-gray-200 last:border-b-0">
+                <a class="flex p-4 hover:text-fuchsia-800 hover:bg-gray-100 transition-colors" href={href}>
+                    <h4 class="font-bold">{title}</h4>
+                </a>
+            </li>
+        ))
+    }
+</ul>

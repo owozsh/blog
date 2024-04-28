@@ -9,13 +9,10 @@ const pathItems: Record<string, string> = pathname.split('/').filter((item) => i
     }), {".": "/"})
 
 const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1
-
-console.log(pathItems)
-console.log(pathname)
 ---
 
-<header class="flex flex-col max-w-[1024px] mx-auto py-4 md:py-8 px-4 gap-2 md:gap-4">
-    <h2 class="font-bold text-red-800">{SITE_TITLE}</h2>
+<header class="flex flex-col max-w-[1024px] mx-auto py-4 md:py-12 px-4 gap-2">
+    <h2 class="text-base m-0 font-bold text-fuchsia-800">{SITE_TITLE}</h2>
 	<nav>
         <ul class="flex">
             {Object.keys(pathItems).map((key, i) => (
@@ -30,6 +27,6 @@ console.log(pathname)
 </header>
 <style>
     a.active {
-        @apply font-bold text-red-800;
+        @apply font-bold text-fuchsia-800;
     }
 </style>

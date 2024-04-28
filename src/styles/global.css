@@ -1,0 +1,27 @@
+body {
+  @apply bg-gray-50;
+}
+
+article hr {
+  @apply mb-4;
+}
+
+article h1 {
+  @apply font-bold text-3xl mt-2 mb-4;
+}
+
+article h2 {
+  @apply font-bold text-2xl mt-1 mb-3;
+}
+
+article h3 {
+  @apply font-bold text-xl mb-2;
+}
+
+article ul li {
+  @apply list-disc list-inside pl-4;
+}
+
+article ol li {
+  @apply list-decimal list-inside pl-4;
+}

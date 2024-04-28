@@ -1,7 +1,9 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import FileList from '../components/FileList.astro';
+import Page from '../components/Page.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { collections } from '../content/config';
 ---
 
 <!doctype html>
@@ -10,8 +12,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
-		<main>
-		</main>
+        <Page>
+                <p class="bg-gray-100 border border-solid border-gray-200 rounded-md p-4">
+                        This is a about me thing
+                </p>
+            <FileList items={Object.keys(collections).map((c) => ({
+                href: c,
+                title: c,
+                }))} />
+        </Page>
 	</body>
 </html>
