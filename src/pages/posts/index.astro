@@ -22,7 +22,7 @@ const posts = (await getCollection('posts')).sort(
     <Page>
 			<section>
 					<FileList items={posts.map((post) => ({
-							href: `posts/${post.slug}`,
+							href: `/posts/${post.slug}`,
 							title: post.data.title,
 							createdAt: post.data.pubDate,
 							}))} />
