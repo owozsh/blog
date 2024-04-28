@@ -11,12 +11,12 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ul class="rounded-md border border-solid border-gray-200 flex flex-col overflow-hidden">
+<ul class=" border border-solid border-base-200 dark:border-base-800 flex flex-col overflow-hidden">
     {
         items.map(({href, title}) => (
-            <li class="even:bg-gray-100 border-b border-solid border-gray-200 last:border-b-0">
-                <a class="flex p-4 hover:text-fuchsia-800 hover:bg-gray-100 transition-colors" href={href}>
-                    <h4 class="font-bold">{title}</h4>
+            <li class="even:bg-base-100 dark:even:bg-base-900 border-b border-solid border-b-base-200 dark:border-base-800 last:border-b-0">
+                <a class="flex p-3 hover:text-accent hover:bg-base-100 dark:hover:bg-base-900 transition-colors" href={href}>
+                    <h4 class="text-current">{title}</h4>
                 </a>
             </li>
         ))

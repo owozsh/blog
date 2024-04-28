@@ -1,5 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .text-accent {
+    @apply text-accent-700 dark:text-accent-dark-300;
+  }
+}
+
 body {
-  @apply bg-gray-50;
+  @apply bg-base-50 dark:bg-base-950;
+}
+
+* {
+  @apply dark:text-base-200 text-base-800;
 }
 
 article hr {
@@ -24,4 +38,16 @@ article ul li {
 
 article ol li {
   @apply list-decimal list-inside pl-4;
+}
+
+article pre {
+  @apply p-3 my-3 border border-solid border-base-300 dark:border-base-900;
+}
+
+article hr {
+  @apply border-base-200 dark:border-base-800;
+}
+
+*::selection {
+  @apply bg-accent-100 dark:bg-accent-dark-950;
 }

@@ -12,12 +12,12 @@ const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1
 ---
 
 <header class="flex flex-col max-w-[1024px] mx-auto py-4 md:py-12 px-4 gap-2">
-    <h2 class="text-base m-0 font-bold text-fuchsia-800">{SITE_TITLE}</h2>
+    <h2 class="text-base m-0 font-bold text-accent">{SITE_TITLE}</h2>
 	<nav>
         <ul class="flex">
             {Object.keys(pathItems).map((key, i) => (
             <li class="flex">
-                <a href={pathItems[key]} class:list={["px-2 hover:underline", { active: isLastPathItem(i) }]}>
+                <a href={pathItems[key]} class:list={["px-2 hover:underline", isLastPathItem(i) ? 'font-bold text-accent' : '']}>
                     {key}{isLastPathItem(i) ? '' : '/'}
                 </a>
             </li>
@@ -25,8 +25,3 @@ const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1
         </ul>
 	</nav>
 </header>
-<style>
-    a.active {
-        @apply font-bold text-fuchsia-800;
-    }
-</style>

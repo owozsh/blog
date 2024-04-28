@@ -18,13 +18,11 @@ const posts = (await getCollection('posts')).sort(
 	<body>
     <Page>
 			<section class="w-[1024px]">
-				<ul class="rounded-md border border-solid border-gray-200 flex flex-col overflow-hidden">
-                <FileList items={posts.map((post) => ({
-                    href: `posts/${post.slug}`,
-                    title: post.data.title,
-                    createdAt: post.data.pubDate,
-                    }))} />
-				</ul>
+					<FileList items={posts.map((post) => ({
+							href: `posts/${post.slug}`,
+							title: post.data.title,
+							createdAt: post.data.pubDate,
+							}))} />
 			</section>
     </Page>
 	</body>
