@@ -4,16 +4,36 @@
 
 @layer base {
   .text-accent {
-    @apply text-accent-700 dark:text-accent-dark-300;
+    @apply text-[#8a00ae] dark:text-[#d99cce];
+  }
+
+  .section-text {
+    @apply text-[#383838] dark:text-[#bebebe];
+  }
+
+  ._border {
+    @apply border-solid border-[#b2afab] dark:border-[#2e2933];
+  }
+
+  .bg-secondary {
+    @apply bg-[#bbbbbb] dark:bg-[#1f1f1f];
   }
 }
 
 body {
-  @apply bg-base-50 dark:bg-base-950 max-w-[840px] mx-auto pb-8;
+  @apply bg-[#ececec] dark:bg-[#202020] max-w-[840px] mx-auto pb-32;
 }
 
 * {
-  @apply dark:text-base-200 text-base-800;
+  @apply dark:text-[#a9a9a9] text-[#4c4c4c];
+}
+
+article p {
+  text-align: justify;
+}
+
+article a {
+  @apply text-accent hover:underline;
 }
 
 article hr {
@@ -21,19 +41,24 @@ article hr {
 }
 
 article h1 {
-  @apply font-bold text-3xl mt-2 mb-4 text-accent;
+  @apply font-bold text-3xl mt-2 mb-4 section-text;
 }
 
 article h2 {
-  @apply font-bold text-2xl mt-1 mb-3;
+  @apply font-bold text-2xl mt-6 mb-2 section-text;
 }
 
 article h3 {
-  @apply font-bold text-xl my-4 text-accent;
+  @apply font-bold text-xl mt-6 mb-2 section-text;
+}
+
+article ul,
+ol {
+  @apply mb-2;
 }
 
 article ul li {
-  @apply list-disc list-inside pl-4;
+  @apply list-disc list-inside pl-4 marker:text-accent;
 }
 
 article ol li {
@@ -41,11 +66,11 @@ article ol li {
 }
 
 article pre {
-  @apply p-3 my-3 border border-solid border-base-300 dark:border-base-900;
+  @apply rounded-xl px-4 py-3 my-3 bg-[#202020];
 }
 
 article hr {
-  @apply border-base-200 dark:border-base-800;
+  @apply border-base-200 dark:border-base-700;
 }
 
 article p {
@@ -56,12 +81,16 @@ article {
   @apply text-lg;
 }
 
+article a em {
+  @apply text-current;
+}
+
 *::selection {
-  @apply bg-accent-100 dark:bg-accent-dark-950;
+  @apply bg-[#3600c020] dark:bg-[#a390ff20];
 }
 
 .aboutme {
-  @apply font-mono flex flex-col items-start bg-base-100 dark:bg-base-900 border border-solid border-base-200 dark:border-base-600 p-3 mb-4;
+  @apply font-mono mb-4;
 }
 
 .aboutme p,
@@ -76,4 +105,25 @@ article {
 
 .aboutme ol li {
   @apply list-decimal list-inside;
+}
+
+.astro-code,
+.astro-code span {
+  background-color: #e0e0e0 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: #171717 !important;
+    /* Optional, if you also want font styles */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }
