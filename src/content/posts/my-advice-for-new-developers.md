@@ -27,7 +27,7 @@ First of all, what I **DON'T** expect you to have
 If an organization just asks you for years of experience and a checklist of things you should know, it's probably not a good
 opportunity.
 
-So, what do will I look for?
+So, what will I look for?
 
 - You **listen** to other people
 - You know how to **explain** your ideas
