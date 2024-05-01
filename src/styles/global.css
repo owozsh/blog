@@ -4,11 +4,11 @@
 
 @layer base {
   .text-accent {
-    @apply text-[#8a00ae] dark:text-[#d99cce];
+    @apply text-[#8a00ae] dark:text-[#edadec];
   }
 
   .section-text {
-    @apply text-[#383838] dark:text-[#bebebe];
+    @apply text-[#383838] dark:text-[#cbcbcb];
   }
 
   ._border {
@@ -21,7 +21,7 @@
 }
 
 body {
-  @apply bg-[#ececec] dark:bg-[#202020] max-w-[840px] mx-auto pb-32;
+  @apply bg-[#ececec] dark:bg-[#141414] max-w-[840px] mx-auto pb-32;
 }
 
 * {
