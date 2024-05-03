@@ -1,29 +1,27 @@
 ---
-import FormattedDate from './FormattedDate.astro'
+import FormattedDate from "./FormattedDate.astro";
 
 interface Props {
-    items: Array<{
-        href: string;
-        title: string;
-        createdAt?: Date;
-        previewUrl?: string;
-        }>;
+  items: Array<{
+    href: string;
+    title: string;
+    createdAt?: Date;
+    previewUrl?: string;
+  }>;
 }
 
 const { items } = Astro.props;
 ---
 
-<ul class="font-mono _border flex flex-col overflow-hidden">
-    {
-        items.map(({href, title, createdAt}) => (
-            <li>
-                <a class="group flex items-center justify-between py-1" href={href}>
-                    <h4 class="group-hover:underline text-accent">{title}</h4>
-                    {createdAt ? (
-                        <FormattedDate date={createdAt} />
-                    ) : null}
-                </a>
-            </li>
-        ))
-    }
+<ul class="font-mono flex flex-col overflow-hidden">
+  {
+    items.map(({ href, title, createdAt }) => (
+      <li>
+        <a class="group flex items-center justify-between py-1" href={href}>
+          <h4 class="group-hover:underline text-accent">{title}</h4>
+          {createdAt ? <FormattedDate date={createdAt} /> : null}
+        </a>
+      </li>
+    ))
+  }
 </ul>

@@ -1,33 +1,31 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Page from '../../components/Page.astro';
-import FileList from '../../components/FileList.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import About from '../../components/About.astro';
-import HomeTabs from '../../components/HomeTabs.astro';
-import Path from '../../components/Path.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import Page from "../../components/Page.astro";
+import FileList from "../../components/FileList.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
 
-const posts = (await getCollection('posts')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
     <Page>
-			<section>
-					<FileList items={posts.map((post) => ({
-							href: `/posts/${post.slug}`,
-							title: post.data.title,
-							createdAt: post.data.pubDate,
-							}))} />
-			</section>
+      <section>
+        <FileList
+          items={posts.map((post) => ({
+            href: `/posts/${post.slug}`,
+            title: post.data.title,
+            createdAt: post.data.pubDate,
+          }))}
+        />
+      </section>
     </Page>
-	</body>
+  </body>
 </html>

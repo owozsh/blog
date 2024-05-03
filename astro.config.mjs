@@ -13,8 +13,8 @@ export default defineConfig({
       // Alternatively, provide multiple themes
       // https://shiki.style/guide/dual-themes
       themes: {
-        light: "rose-pine-dawn",
-        dark: "rose-pine-moon",
+        light: "solarized-light",
+        dark: "solarized-dark",
       },
       // Add custom languages
       // Note: Shiki has countless langs built-in, including .astro!

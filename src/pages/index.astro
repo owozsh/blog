@@ -1,44 +1,47 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import FileList from '../components/FileList.astro';
-import Section from '../components/Section.astro';
-import Page from '../components/Page.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { collections } from '../content/config';
-import About from '../components/About.astro';
-import { getCollection } from 'astro:content';
+import BaseHead from "../components/BaseHead.astro";
+import FileList from "../components/FileList.astro";
+import Section from "../components/Section.astro";
+import Page from "../components/Page.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { collections } from "../content/config";
+import About from "../components/About.astro";
+import { getCollection } from "astro:content";
 
-const recentItems = []
+const recentItems = [];
 
 for (const c of Object.keys(collections)) {
-        recentItems.push(await getCollection(c as keyof typeof collections))
+  recentItems.push(await getCollection(c as keyof typeof collections));
 }
 
-const sortedItems = recentItems.flat().sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
+const sortedItems = recentItems
+  .flat()
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-        <Page>
-                <About/>
-                <Section>Explore</Section>
-                <FileList items={Object.keys(collections).map((c) => ({
-                        href: `/${c}`,
-                        title: c,
-                }))} />
-                <Section>Recent posts</Section>
-            <FileList items={sortedItems.map((c) => ({
-                href: `/${c.collection}/${c.slug}`,
-                title: `${c.data.title}`,
-                createdAt: c.data.pubDate
-                }))} />
-        </Page>
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Page>
+      <About />
+      <Section>Explore</Section>
+      <FileList
+        items={Object.keys(collections).map((c) => ({
+          href: `/${c}`,
+          title: c,
+        }))}
+      />
+      <Section>Recent posts</Section>
+      <FileList
+        items={sortedItems.map((c) => ({
+          href: `/${c.collection}/${c.slug}`,
+          title: `${c.data.title}`,
+          createdAt: c.data.pubDate,
+        }))}
+      />
+    </Page>
+  </body>
 </html>
