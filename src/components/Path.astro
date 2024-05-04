@@ -15,8 +15,8 @@ const pathItems: Record<string, string> = pathname
 const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1;
 ---
 
-<nav>
-  <ul class="flex">
+<nav class="text-sm">
+  <ul class="flex md:flex-row flex-col">
     {
       Object.keys(pathItems).map((key, i) => (
         <li class="flex">
@@ -27,8 +27,7 @@ const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1;
               isLastPathItem(i) ? "font-bold text-accent" : "",
             ]}
           >
-            {key}
-            {isLastPathItem(i) ? "" : "/"}
+            {`${key}${isLastPathItem(i) ? "" : "/"}`}
           </a>
         </li>
       ))
