@@ -4,6 +4,7 @@ import Page from "../../components/Page.astro";
 import FileList from "../../components/FileList.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import type { ContentEntryMap } from "astro:content";
 
 export async function getStaticPaths() {
   return [
@@ -15,9 +16,9 @@ export async function getStaticPaths() {
 
 const { collection } = Astro.params;
 
-const dev = (await getCollection(collection)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts: any[] = (
+  await getCollection(collection as keyof ContentEntryMap)
+).sort((a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
@@ -29,8 +30,9 @@ const dev = (await getCollection(collection)).sort(
     <Page>
       <section>
         <FileList
-          items={dev.map((post) => ({
+          items={posts.map((post) => ({
             href: `/${collection}/${post.slug}`,
+            type: "file",
             title: post.data.title,
             createdAt: post.data.pubDate,
           }))}
