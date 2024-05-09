@@ -5,7 +5,17 @@ import FileList from "../../components/FileList.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("posts")).sort(
+export async function getStaticPaths() {
+  return [
+    { params: { collection: "dev" } },
+    { params: { collection: "thoughts" } },
+    { params: { collection: "product-reviews" } },
+  ];
+}
+
+const { collection } = Astro.params;
+
+const dev = (await getCollection(collection)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
@@ -19,8 +29,8 @@ const posts = (await getCollection("posts")).sort(
     <Page>
       <section>
         <FileList
-          items={posts.map((post) => ({
-            href: `/posts/${post.slug}`,
+          items={dev.map((post) => ({
+            href: `/${collection}/${post.slug}`,
             title: post.data.title,
             createdAt: post.data.pubDate,
           }))}

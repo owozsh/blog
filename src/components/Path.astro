@@ -15,8 +15,8 @@ const pathItems: Record<string, string> = pathname
 const isLastPathItem = (i: number) => i === Object.keys(pathItems).length - 1;
 ---
 
-<nav class="text-sm">
-  <ul class="flex md:flex-row flex-col">
+<nav>
+  <ul class="flex md:flex-row flex-col gap-2 md:gap-0">
     {
       Object.keys(pathItems).map((key, i) => (
         <li class="flex">

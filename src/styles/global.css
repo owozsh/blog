@@ -14,6 +14,30 @@
   }
 }
 
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/fonts/source-code-pro/SourceCodePro-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/fonts/source-code-pro/SourceCodePro-Italic.ttf") format("ttf");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/fonts/source-code-pro/SourceCodePro-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* BG */
 body {
   @apply bg-[#FDF6E3] dark:bg-[#002B36] max-w-[840px] mx-auto pb-32;
@@ -22,6 +46,10 @@ body {
 /* FG */
 * {
   @apply text-[#657B83] dark:text-[#839496];
+}
+
+hr {
+  @apply border-[#657B83]/20;
 }
 
 article p {
@@ -75,6 +103,26 @@ article p {
 
 article {
   @apply text-lg;
+}
+
+article table {
+  @apply text-sm md:text-base font-mono border border-solid border-[#657B83]/30;
+}
+
+article table th {
+  @apply p-0;
+}
+
+article table tr {
+  @apply even:bg-[#657B83]/5;
+}
+
+article table tr td {
+  @apply border-b border-solid border-b-[#657B83]/30;
+}
+
+article table td {
+  @apply border-r border-solid border-[#657B83]/30 py-1 px-2;
 }
 
 article a em {
