@@ -14,7 +14,7 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ul class="font-mono flex flex-col overflow-hidden border border-[#657B83]/30">
+<ul class="flex flex-col overflow-hidden border border-[#657B83]/30">
   {
     items.length > 0 ? (
       items.map(({ href, title, createdAt, type }) => (

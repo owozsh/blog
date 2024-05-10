@@ -106,7 +106,7 @@ article {
 }
 
 article table {
-  @apply text-sm md:text-base font-mono border border-solid border-[#657B83]/30;
+  @apply text-sm md:text-base border border-solid border-[#657B83]/30;
 }
 
 article table th {
@@ -134,7 +134,7 @@ article a em {
 }
 
 .aboutme {
-  @apply font-mono mb-4;
+  @apply mb-4;
 }
 
 .aboutme p,
