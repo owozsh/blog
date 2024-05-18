@@ -3,7 +3,10 @@ title: "Wayland HiDPI Workarounds"
 pubDate: "May 18 2024"
 ---
 
-This is a collection of workarounds for problems related with using Wayland and Fractional Scaling.
+If you're using Wayland and have tried setting the experimental fractional scaling up, you probably noticed by this point
+that XWayland applications look blurry and weird.
+
+This post brings a collection of workarounds for Wayland's fractional scaling problems.
 
 ### My environment
 
@@ -15,9 +18,6 @@ This is a collection of workarounds for problems related with using Wayland and 
 | Distro           | Fedora 40          |
 
 ### Electron
-
-If you're using Wayland and have tried setting the experimental fractional scaling up, you probably noticed by this point
-that XWayland applications look blurry and weird.
 
 Specially for electron apps, we can set an environment variable that will tell our application to run under Wayland when
 possible.
