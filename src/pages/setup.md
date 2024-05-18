@@ -11,11 +11,12 @@ pubDate: "May 09 2024"
 | **Monospace Font** | Source Code Pro |
 | **Editor Theme**   | Solarized Light |
 
-### Programs and Services
+### Software
 
 |                       |                           |
 | --------------------- | ------------------------- |
-| **Operating Systems** | Desktop: Windows 11       |
+| **Operating System**  | ~~Desktop: Windows 11~~   |
+|                       | Desktop: Fedora 40        |
 |                       | ThinkPad: Debian 12       |
 | **Browser**           | Google Chrome             |
 | **Text Editor**       | Visual Studio Code (work) |

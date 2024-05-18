@@ -8,9 +8,7 @@ import type { ContentEntryMap } from "astro:content";
 
 export async function getStaticPaths() {
   return [
-    { params: { collection: "dev" } },
-    { params: { collection: "thoughts" } },
-    { params: { collection: "product-reviews" } },
+    { params: { collection: "posts" } }
   ];
 }
 

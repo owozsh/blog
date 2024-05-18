@@ -11,7 +11,5 @@ const base_post_collection_schema = defineCollection({
 });
 
 export const collections = {
-  dev: base_post_collection_schema,
-  "product-reviews": base_post_collection_schema,
-  thoughts: base_post_collection_schema,
+  posts: base_post_collection_schema,
 };

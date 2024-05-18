@@ -27,14 +27,6 @@ const sortedItems = recentPosts
   <body>
     <Page>
       <About />
-      <Section>Explore</Section>
-      <FileList
-        items={Object.keys(collections).map((c) => ({
-          type: "dir",
-          href: `/${c}`,
-          title: c,
-        }))}
-      />
       <Section>Recent posts</Section>
       <FileList
         items={sortedItems.map((c) => ({
