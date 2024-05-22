@@ -6,10 +6,11 @@ pubDate: "May 09 2024"
 
 ### Editor Settings
 
-|                    |                 |
-| ------------------ | --------------- |
-| **Monospace Font** | Source Code Pro |
-| **Editor Theme**   | Solarized Light |
+|                    |                     |
+| ------------------ | ---------------     |
+| **Monospace Font** | ~~Source Code Pro~~ |
+|                    | Comic Code          |
+| **Editor Theme**   | Solarized Light     |
 
 ### Software
 
@@ -18,9 +19,9 @@ pubDate: "May 09 2024"
 | **Operating System**  | ~~Desktop: Windows 11~~   |
 |                       | Desktop: Fedora 40        |
 |                       | ThinkPad: Debian 12       |
-| **Browser**           | Google Chrome             |
-| **Text Editor**       | Visual Studio Code (work) |
-|                       | Neovim (everything else)  |
+| **Browser**           | ~~Google Chrome~~         |
+|                       | Firefox                   |
+| **Text Editor**       | Neovim                    |
 | **Email Client**      | Hey Email                 |
 | **Calendar**          | Hey Calendar              |
 | **Password Manager**  | 1Password                 |
