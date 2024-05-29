@@ -10,12 +10,10 @@ This post brings a collection of workarounds for Wayland's fractional scaling pr
 
 ### My environment
 
-|                  |                    |
-|------------------|--------------------|
-| Desktop          | Gnome              |
-| Windowing System | Wayland            |
-| Graphics         | Proprietary Nvidia |
-| Distro           | Fedora 40          |
+- Desktop: **Gnome**
+- Windowing System: **Wayland**
+- Graphics: **Nvidia**
+- Distro: **Fedora 40**
 
 ### Electron
 

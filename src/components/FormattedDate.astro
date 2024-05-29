@@ -6,7 +6,7 @@ interface Props {
 const { date } = Astro.props;
 ---
 
-<time datetime={date.toISOString()} class="text-sm text-current">
+<time datetime={date.toISOString()} class="text-lg text-current">
   {
     date.toLocaleDateString("en-us", {
       weekday: "short",

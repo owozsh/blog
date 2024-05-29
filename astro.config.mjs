@@ -13,7 +13,7 @@ export default defineConfig({
       // Alternatively, provide multiple themes
       // https://shiki.style/guide/dual-themes
       themes: {
-        light: "solarized-light",
+        light: "nord",
         dark: "solarized-dark",
       },
       // Add custom languages

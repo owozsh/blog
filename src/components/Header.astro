@@ -1,9 +1,11 @@
 ---
 import { SITE_TITLE } from "../consts";
 import Path from "./Path.astro";
+import Link from "./Link.astro";
 ---
 
-<header class="flex flex-col mx-auto py-4 md:pt-12 md:pb-8 px-4 gap-2">
-  <h2 class="section-text m-0 font-bold"><a href="/">{SITE_TITLE}</a></h2>
-  <Path />
+<header class="text-lg flex flex-col items-center justify-center mx-auto py-6 md:pt-12 md:pb-8 px-4 gap-2">
+  <a class="font-bold hover:underline decoration-2 underline-offset-2" href="/">
+      {SITE_TITLE}
+  </a>
 </header>

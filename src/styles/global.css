@@ -6,55 +6,31 @@
 
     /* ACCENT */
     .text-accent {
-        @apply text-[#268BD2] dark:text-[#268BD2];
+        @apply text-[#0055ff];
     }
 
     /* FG2 */
     .section-text {
-        @apply text-[#657B83] dark:text-[#839496];
+        @apply text-[#222];
     }
-}
-
-@font-face {
-    font-family: "Source Code Pro";
-    src: url("/fonts/source-code-pro/SourceCodePro-Regular.ttf") format("ttf");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Source Code Pro";
-    src: url("/fonts/source-code-pro/SourceCodePro-Italic.ttf") format("ttf");
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Source Code Pro";
-    src: url("/fonts/source-code-pro/SourceCodePro-Bold.ttf") format("ttf");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
 }
 
 /* BG */
 body {
-    @apply bg-[#FDF6E3] dark:bg-[#002B36] max-w-[840px] mx-auto pb-32;
+    @apply bg-[#f8f8f8] max-w-[600px] mx-auto pb-32;
 }
 
 /* FG */
 * {
-    @apply text-[#657B83] dark:text-[#839496];
+    @apply text-[#222];
 }
 
 hr {
-    @apply border-[#657B83]/20;
+    @apply border-[#ccc];
 }
 
 article p {
-    @apply text-justify text-base;
+    @apply text-justify text-lg;
 }
 
 article a {
@@ -66,15 +42,15 @@ article hr {
 }
 
 article h1 {
-    @apply font-bold text-xl mt-2 mb-4 section-text;
+    @apply font-bold text-3xl mt-2 mb-4 section-text;
 }
 
 article h2 {
-    @apply font-bold text-lg mt-6 mb-2 section-text;
+    @apply text-center font-bold text-2xl my-8 section-text;
 }
 
 article h3 {
-    @apply font-bold text-base mt-6 mb-2 section-text;
+    @apply text-center font-bold text-xl my-4 section-text;
 }
 
 article ul,
@@ -83,19 +59,19 @@ ol {
 }
 
 article ul li {
-    @apply text-base list-disc list-inside pl-4 marker:text-accent;
+    @apply text-lg list-disc list-inside pl-4 marker:text-accent;
 }
 
 article ol li {
-    @apply text-base list-decimal list-inside pl-4;
+    @apply text-lg list-decimal list-inside pl-4;
 }
 
 article p code {
-    @apply text-sm rounded-md px-3 py-1 border border-solid border-[#657B8360];
+    @apply text-sm;
 }
 
 article pre {
-    @apply text-sm rounded-md px-4 py-3 my-3 bg-[#002b36] border border-solid border-[#657B8360];
+    @apply text-sm rounded-md px-4 py-6 my-3;
 }
 
 article hr {
@@ -111,7 +87,7 @@ article {
 }
 
 article table {
-    @apply mb-3 text-sm md:text-base border border-solid border-[#657B83]/30;
+    @apply mx-auto w-full mb-3 text-sm md:text-base border border-solid border-[#ddd];
 }
 
 article table th {
@@ -119,15 +95,15 @@ article table th {
 }
 
 article table tr {
-    @apply even:bg-[#657B83]/5;
+    @apply even:bg-[#f0f0f0];
 }
 
 article table tr td {
-    @apply border-b border-solid border-b-[#657B83]/30;
+    @apply border-b border-solid border-b-[#ddd];
 }
 
 article table td {
-    @apply border-r border-solid border-[#657B83]/30 py-1 px-2;
+    @apply border-r border-solid border-[#ddd] py-1 px-2;
 }
 
 article a em {
@@ -135,11 +111,11 @@ article a em {
 }
 
 *::selection {
-    @apply bg-[#268BD220] dark:bg-[#268BD220];
+    @apply bg-[#ffdd2060];
 }
 
 .aboutme {
-    @apply mb-4;
+    @apply text-lg mb-4;
 }
 
 .aboutme p,
@@ -156,18 +132,18 @@ article a em {
     @apply list-decimal list-inside;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-    }
+/* @media (prefers-color-scheme: dark) { */
+/*     :root { */
+/*         color-scheme: dark; */
+/*     } */
 
-    .astro-code,
-    .astro-code span {
-        color: var(--shiki-dark) !important;
-        background-color: var(--shiki-dark-background) !important;
-        /* Optional, if you also want font styles */
-        font-style: var(--shiki-dark-font-style) !important;
-        font-weight: var(--shiki-dark-font-weight) !important;
-        text-decoration: var(--shiki-dark-text-decoration) !important;
-    }
-}
+/*     .astro-code, */
+/*     .astro-code span { */
+/*         color: var(--shiki-dark) !important; */
+/*         background-color: var(--shiki-dark-background) !important; */
+/*         /1* Optional, if you also want font styles *1/ */
+/*         font-style: var(--shiki-dark-font-style) !important; */
+/*         font-weight: var(--shiki-dark-font-weight) !important; */
+/*         text-decoration: var(--shiki-dark-text-decoration) !important; */
+/*     } */
+/* } */
