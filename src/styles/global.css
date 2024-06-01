@@ -71,7 +71,7 @@ article p code {
 }
 
 article pre {
-    @apply text-sm rounded-md px-4 py-6 my-3;
+    @apply text-sm rounded-md p-4 my-3;
 }
 
 article hr {
