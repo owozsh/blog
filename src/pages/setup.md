@@ -6,17 +6,17 @@ pubDate: "May 09 2024"
 
 ### Editor Settings
 
-- Monospace Font: ~~Source Code Pro~~ Comic Code
+- Monospace Font: SF Mono
 - Color Scheme: Solarized Light
 
 ### Software
 
-- Desktop Operating System: ~~Windows 11~~ Fedora 40
+- Desktop Operating System: Windows 11
 - ThinkPad Operating System: Debian 12
-- Browser: ~~Google Chrome~~ Firefox
-- Text Editor: Neovim
-- Email: Hey Email
-- Calendar: Hey Calendar
+- Browser: Google Chrome
+- Text Editor: Visual Studio Code
+- Email: iCloud Mail
+- Calendar: iCloud Calendar
 - Password Manager: 1Password
 - Music Streaming: Spotify
 
