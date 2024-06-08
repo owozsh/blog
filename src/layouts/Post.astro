@@ -1,12 +1,9 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Page from "../components/Page.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
-const { title, pubDate, updatedDate, frontmatter } = Astro.props;
-
-console.log(Astro.props);
+const { title, pubDate, frontmatter } = Astro.props;
 ---
 
 <html lang="en">
