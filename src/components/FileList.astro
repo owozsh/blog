@@ -1,5 +1,6 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
+import Link from "./Link.astro";
 
 interface Props {
   items: Array<{
@@ -14,21 +15,18 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ul class="flex flex-col overflow-hidden border border-[#657B83]/30">
+<ul class="text-lg flex flex-col overflow-hidden">
   {
     items.length > 0 ? (
       items.map(({ href, title, createdAt, type }) => (
-        <li class="border-b border-[#657B83]/30 last:border-0 even:bg-[#657B83]/5">
-          <a
-            class="group flex flex-col md:flex-row md:items-center justify-between py-1 px-2"
-            href={href}
+          <li
+            class="group flex flex-col md:flex-row md:items-center justify-between py-1"
           >
-            <p class="group-hover:underline group-hover:text-accent">
-              {`${title}${type === "dir" ? "/" : ""}`}
-            </p>
-            {createdAt ? <FormattedDate date={createdAt} /> : null}
-          </a>
-        </li>
+              <Link replace to={href}>
+                  {`${title}${type === "dir" ? "/" : ""}`}
+              </Link>
+                {createdAt ? <FormattedDate date={createdAt} /> : null}
+          </li>
       ))
     ) : (
       <li class="p-4 italic text-center">Writing...</li>

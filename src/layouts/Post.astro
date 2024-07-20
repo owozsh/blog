@@ -1,0 +1,26 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Page from "../components/Page.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const { title, pubDate, frontmatter } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title ?? frontmatter.title} description="" />
+  </head>
+  <body>
+    <Page>
+          <div class="flex flex-col items-center justify-center mt-2 mb-10">
+            <h1 class="font-black text-4xl">{title ?? frontmatter.title}</h1>
+          </div>
+      <article>
+          <slot />
+      </article>
+    <div class="text-[#888] mt-8 flex items-center justify-center gap-6">
+      <FormattedDate date={pubDate ?? new Date(frontmatter.pubDate)} />
+    </div>
+    </Page>
+  </body>
+</html>

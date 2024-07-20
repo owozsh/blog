@@ -1,5 +1,6 @@
 {
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "file:///home/owozsh/Developer/bloga/.github/workflows/deploy.yml"
-  }
+  },
+  "workbench.iconTheme": "vs-seti"
 }
