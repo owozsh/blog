@@ -1,20 +1,19 @@
 ---
-layout: ../layouts/BlogPost.astro
+layout: ../layouts/Post.astro
 title: What I use, 2024
 pubDate: "May 09 2024"
 ---
 
 ### Editor Settings
 
-- Monospace Font: SF Mono
-- Color Scheme: Solarized Light
+- Monospace Font: Fira Code
+- Color Scheme: Gruvbox
 
 ### Software
 
 - Desktop Operating System: Windows 11
-- ThinkPad Operating System: Debian 12
 - Browser: Google Chrome
-- Text Editor: Visual Studio Code
+- Text Editor: VSCode & Neovim
 - Email: iCloud Mail
 - Calendar: iCloud Calendar
 - Password Manager: 1Password
@@ -22,12 +21,12 @@ pubDate: "May 09 2024"
 
 ### Desk Setup
 
-- Chair: Herman Miller Aeron
 - Microphone: Blue Snowball iCE
 - Headphones: Sennheiser HD 560S and Sony WH-1000M4
 - Mouse: Logitech G403
 - Keyboard: Keychron K1 SE
 - Webcam: Logitech C920s
+- Chair: Herman Miller Aeron
 
 ### PC Specs
 
